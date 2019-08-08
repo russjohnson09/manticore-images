@@ -34,13 +34,11 @@
 # ##################################################################################################
 
 # This image is based of debian
-#has a build of master already.
-FROM manticore-sdl-core-base:latest
+FROM smartdevicelink/manticore-sdl-core:master
 
 MAINTAINER Chris Rokita version:1.0
 
-#already did cmake in base
-ARG CORE_VERSION=master
+ARG CORE_VERSION=develop
 ARG DBUILD_AVAHI_SUPPORT=OFF
 ARG DBUILD_USB_SUPPORT=OFF
 ARG DBUILD_BT_SUPPORT=OFF
@@ -50,35 +48,54 @@ ARG DENABLE_HMI_PTU_DECRYPTION=OFF
 ENV CORE_NETWORK_INTERFACE eth0
 ENV CORE_VERSION=${CORE_VERSION}
 
-WORKDIR /usr/sdl_core
-RUN git checkout $CORE_VERSION
-RUN git pull
+# Install dependencies
+#RUN apt-get update && apt-get install -y --no-install-recommends \
+#        build-essential \
+#        cmake \
+#        libudev-dev \
+#        libsqlite3-dev \
+#        libssl1.0-dev \
+#        nginx \
+#        python \
+#        sudo \
+#        supervisor \
+#        sqlite3 \
+#        git
 
-RUN mkdir /usr/build || true
+# Download SDL Core from github
+#WORKDIR /usr
+
+RUN mv /usr/sdl_core /usr/sdl_core_master
+RUN mkdir /usr/sdl_core
+
+RUN git clone https://github.com/smartdevicelink/sdl_core.git /usr/sdl_core -b $CORE_VERSION --depth=1
+
+#RUN mkdir /usr/build
 
 # Work inside the build folder
 WORKDIR /usr/build
 
+# Git needs to be configured now...
+RUN git config --global user.email "anon@mail.com"
+RUN git config --global user.name "Anonymous"
 
-#already did cmake in base
+# Generate our Makefile, compile it and install
+# Remove everything but what's inside the bin folder of the build directory to save space
 #RUN cmake -DBUILD_AVAHI_SUPPORT=$DBUILD_AVAHI_SUPPORT \
 #    -DBUILD_USB_SUPPORT=$DBUILD_USB_SUPPORT \
 #    -DBUILD_BT_SUPPORT=$DBUILD_BT_SUPPORT \
 #    -DEXTENDED_MEDIA_MODE=$DEXTENDED_MEDIA_MODE \
 #    -DENABLE_HMI_PTU_DECRYPTION=$DENABLE_HMI_PTU_DECRYPTION \
-#    ../sdl_core
+#    ../sdl_core \
+#    && make \
+#    && make install \
+#    && mv bin /usr/tmpbin \
+#    && rm -rf * \
+#    && mv /usr/tmpbin bin
 
-# Generate our Makefile, compile it and install
-# Remove everything but what's inside the bin folder of the build directory to save space
-RUN make \
-    && make install
-    && mv bin /usr/tmpbin \
-    && rm -rf * \
-    && mv /usr/tmpbin bin
-
-RUN mkdir -p /usr/web/logstream
-RUN mkdir -p /usr/web/broker
-RUN mkdir -p /usr/web/policy
+#RUN mkdir -p /usr/web/logstream
+#RUN mkdir -p /usr/web/broker
+#RUN mkdir -p /usr/web/policy
 WORKDIR /usr/web/logstream
 
 # Copy node and npm files
@@ -93,9 +110,9 @@ RUN /bin/bash -c "source /root/.bashrc; \
     nvm install v8.11.1 \
     nvm use v8.11.1 \
     nvm alias default v8.11.1"
-#
-## Install dependencies
-#
+
+# Install dependencies
+
 WORKDIR /usr/web/logstream
 RUN /bin/bash -c "source /root/.bashrc; \
     npm install"
@@ -108,7 +125,7 @@ WORKDIR /usr/web/policy
 RUN /bin/bash -c "source /root/.bashrc; \
     npm install"
 
-## Directory to run commands in
+# Directory to run commands in
 WORKDIR /usr/build/bin
 
 # Copy SDL Core start script into container
@@ -146,8 +163,7 @@ COPY sdl_preloaded_pt.json /usr/build/bin/sdl_preloaded_pt.json
 #   8888: Expose websocket port for core log streaming
 #   9000: Websocket connection to the broker
 #   9898: Expose miniature policy server port
-#EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898
+EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898
 
 # Run the start script that will launch SDL Core!
 CMD ["/bin/bash", "setup.sh"]
-
