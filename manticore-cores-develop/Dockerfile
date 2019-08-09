@@ -1,12 +1,27 @@
+#On mac set memory to 8g or higher.
+
+#On mac turn expiremental features on
+
+#docker build . --squash
+
+
 #build with --no-cache to get the most recent develop
 
-#docker build --no-cache -t manticore-core-develop .
-#docker tag manticore-core-develop russjohnson09/mantiore-core-develop
+#docker system prune -a
+
+
+#docker build --no-cache .  or docker build -t russjohnson09/manticore-core-develop:dev . if no repo changes
 #docker push russjohnson09/manticore-core-develop:latest
 
 #-P will expose ports from container to host but it will be random
-#docker run -d -P -p 9010:8087 -p 9011:12345 --name manticore-core-develop -v ~/dockercorestorage:/usr/build/bin/storage cores-6.0.0
+#docker run -d -P -p 9010:8087 -p 9011:12345 --name manticore-core-develop -v ~/dockercorestorage:/usr/build/bin/storage manticore-core-develop
 
+#cmake already made.
+#make ran once.
+#If I update this one things will go slightly faster.
+#https://github.com/docker/for-linux/issues/414
+
+# docker save 49b5a7a88d5 | sudo docker-squash -t jwilder/whoami:squash | docker load
 FROM russjohnson09/manticore-core-develop:latest
 
 ARG CORE_VERSION=develop
@@ -25,6 +40,7 @@ RUN git pull
 
 WORKDIR /usr/build
 RUN make
+RUN make install
 
 RUN mkdir -p /usr/web/logstream
 RUN mkdir -p /usr/web/broker
@@ -91,7 +107,7 @@ COPY setup.sh setup.sh
 ##   9000: Websocket connection to the broker
 ##   9898: Expose miniature policy server port
 ##   8087: Expose core websocket. SHOULD use broker in most cases.
-EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898 8087
+#EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898 8087
 
 ## Run the start script that will launch SDL Core!
 CMD ["/bin/bash", "setup.sh"]
