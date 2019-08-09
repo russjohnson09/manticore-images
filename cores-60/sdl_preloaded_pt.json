@@ -7,10 +7,10 @@
             "exchange_after_x_days": 30,
             "timeout_after_x_seconds": 60,
             "seconds_between_retries": [1,
-            5,
-            25,
-            125,
-            625],
+                5,
+                25,
+                125,
+                625],
             "endpoints": {
                 "0x07": {
                     "default": ["http://x.x.x.x:3000/api/1/policies/proprietary"]
@@ -33,244 +33,245 @@
                 "COMMUNICATION": 6,
                 "NORMAL": 4,
                 "NONE": 0
-            }
+            },
+            "lock_screen_dismissal_enabled": true
         },
         "functional_groupings": {
             "Base-4": {
                 "rpcs": {
                     "AddCommand": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "AddSubMenu": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "Alert": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "ChangeRegistration": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "CreateInteractionChoiceSet": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "DeleteCommand": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "DeleteFile": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "DeleteInteractionChoiceSet": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "DeleteSubMenu": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "EncodedSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "EndAudioPassThru": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GenericResponse": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GetSystemCapability": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "ListFiles": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnAppInterfaceUnregistered": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnAudioPassThru": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "OnButtonEvent": {
                         "hmi_levels": ["FULL",
-                        "LIMITED",
-                        "BACKGROUND"]
+                            "LIMITED",
+                            "BACKGROUND"]
                     },
                     "OnButtonPress": {
                         "hmi_levels": ["FULL",
-                        "LIMITED",
-                        "BACKGROUND"]
+                            "LIMITED",
+                            "BACKGROUND"]
                     },
                     "OnCommand": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "OnDriverDistraction": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnEncodedSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnHashChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnHMIStatus": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnLanguageChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnPermissionsChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnSystemRequest": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnSystemCapabilityUpdated": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "PerformAudioPassThru": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "PerformInteraction": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "PutFile": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
-                    },                    
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
+                    },
                     "RegisterAppInterface": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "ResetGlobalProperties": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "ScrollableMessage": {
                         "hmi_levels": ["FULL"]
                     },
                     "SetAppIcon": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetDisplayLayout": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetGlobalProperties": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetMediaClockTimer": {
                         "hmi_levels": ["FULL",
-                        "LIMITED",
-                        "BACKGROUND"]
+                            "LIMITED",
+                            "BACKGROUND"]
                     },
                     "Show": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "Slider": {
                         "hmi_levels": ["FULL"]
                     },
                     "Speak": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "SubscribeButton": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "SystemRequest": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "UnregisterAppInterface": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "UnsubscribeButton": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -279,31 +280,31 @@
                 "rpcs": {
                     "GetVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["gps",
-                        "speed"]
+                            "speed"]
                     },
                     "OnVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["gps",
-                        "speed"]
+                            "speed"]
                     },
                     "SubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["gps",
-                        "speed"]
+                            "speed"]
                     },
                     "UnsubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["gps",
-                        "speed"]
+                            "speed"]
                     }
                 }
             },
@@ -348,55 +349,55 @@
                 "rpcs": {
                     "GetVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["accPedalPosition",
-                        "beltStatus",
-                        "electronicParkBrakeStatus",
-                        "driverBraking",
-                        "myKey",
-                        "prndl",
-                        "rpm",
-                        "steeringWheelAngle"]
+                            "beltStatus",
+                            "electronicParkBrakeStatus",
+                            "driverBraking",
+                            "myKey",
+                            "prndl",
+                            "rpm",
+                            "steeringWheelAngle"]
                     },
                     "OnVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["accPedalPosition",
-                        "beltStatus",
-                        "electronicParkBrakeStatus",
-                        "driverBraking",
-                        "myKey",
-                        "prndl",
-                        "rpm",
-                        "steeringWheelAngle"]
+                            "beltStatus",
+                            "electronicParkBrakeStatus",
+                            "driverBraking",
+                            "myKey",
+                            "prndl",
+                            "rpm",
+                            "steeringWheelAngle"]
                     },
                     "SubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["accPedalPosition",
-                        "beltStatus",
-                        "electronicParkBrakeStatus",
-                        "driverBraking",
-                        "myKey",
-                        "prndl",
-                        "rpm",
-                        "steeringWheelAngle"]
+                            "beltStatus",
+                            "electronicParkBrakeStatus",
+                            "driverBraking",
+                            "myKey",
+                            "prndl",
+                            "rpm",
+                            "steeringWheelAngle"]
                     },
                     "UnsubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["accPedalPosition",
-                        "beltStatus",
-                        "electronicParkBrakeStatus",
-                        "driverBraking",
-                        "myKey",
-                        "prndl",
-                        "rpm",
-                        "steeringWheelAngle"]
+                            "beltStatus",
+                            "electronicParkBrakeStatus",
+                            "driverBraking",
+                            "myKey",
+                            "prndl",
+                            "rpm",
+                            "steeringWheelAngle"]
                     }
                 }
             },
@@ -405,85 +406,85 @@
                 "rpcs": {
                     "GetVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["bodyInformation",
-                        "deviceStatus",
-                        "engineOilLife",
-                        "engineTorque",
-                        "externalTemperature",
-                        "turnSignal",
-                        "fuelLevel",
-                        "fuelLevel_State",
-                        "headLampStatus",
-                        "instantFuelConsumption",
-                        "fuelRange",
-                        "cloudAppVehicleID",
-                        "odometer",
-                        "tirePressure",
-                        "vin",
-                        "wiperStatus"]
+                            "deviceStatus",
+                            "engineOilLife",
+                            "engineTorque",
+                            "externalTemperature",
+                            "turnSignal",
+                            "fuelLevel",
+                            "fuelLevel_State",
+                            "headLampStatus",
+                            "instantFuelConsumption",
+                            "fuelRange",
+                            "cloudAppVehicleID",
+                            "odometer",
+                            "tirePressure",
+                            "vin",
+                            "wiperStatus"]
                     },
                     "OnVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["bodyInformation",
-                        "deviceStatus",
-                        "engineOilLife",
-                        "engineTorque",
-                        "externalTemperature",
-                        "turnSignal",
-                        "fuelLevel",
-                        "fuelLevel_State",
-                        "headLampStatus",
-                        "instantFuelConsumption",
-                        "fuelRange",
-                        "cloudAppVehicleID",
-                        "odometer",
-                        "tirePressure",
-                        "vin",
-                        "wiperStatus"]
+                            "deviceStatus",
+                            "engineOilLife",
+                            "engineTorque",
+                            "externalTemperature",
+                            "turnSignal",
+                            "fuelLevel",
+                            "fuelLevel_State",
+                            "headLampStatus",
+                            "instantFuelConsumption",
+                            "fuelRange",
+                            "cloudAppVehicleID",
+                            "odometer",
+                            "tirePressure",
+                            "vin",
+                            "wiperStatus"]
                     },
                     "SubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["bodyInformation",
-                        "deviceStatus",
-                        "engineOilLife",
-                        "engineTorque",
-                        "externalTemperature",
-                        "turnSignal",
-                        "fuelLevel",
-                        "fuelLevel_State",
-                        "headLampStatus",
-                        "instantFuelConsumption",
-                        "fuelRange",
-                        "cloudAppVehicleID",
-                        "odometer",
-                        "tirePressure",
-                        "wiperStatus"]
+                            "deviceStatus",
+                            "engineOilLife",
+                            "engineTorque",
+                            "externalTemperature",
+                            "turnSignal",
+                            "fuelLevel",
+                            "fuelLevel_State",
+                            "headLampStatus",
+                            "instantFuelConsumption",
+                            "fuelRange",
+                            "cloudAppVehicleID",
+                            "odometer",
+                            "tirePressure",
+                            "wiperStatus"]
                     },
                     "UnsubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["bodyInformation",
-                        "deviceStatus",
-                        "engineOilLife",
-                        "engineTorque",
-                        "externalTemperature",
-                        "turnSignal",
-                        "fuelLevel",
-                        "fuelLevel_State",
-                        "headLampStatus",
-                        "instantFuelConsumption",
-                        "fuelRange",
-                        "cloudAppVehicleID",
-                        "odometer",
-                        "tirePressure",
-                        "wiperStatus"]
+                            "deviceStatus",
+                            "engineOilLife",
+                            "engineTorque",
+                            "externalTemperature",
+                            "turnSignal",
+                            "fuelLevel",
+                            "fuelLevel_State",
+                            "headLampStatus",
+                            "instantFuelConsumption",
+                            "fuelRange",
+                            "cloudAppVehicleID",
+                            "odometer",
+                            "tirePressure",
+                            "wiperStatus"]
                     }
                 }
             },
@@ -491,18 +492,18 @@
                 "rpcs": {
                     "DiagnosticMessage": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GetDTCs": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "ReadDID": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -510,18 +511,18 @@
                 "rpcs": {
                     "DiagnosticMessage": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GetDTCs": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "ReadDID": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -529,13 +530,13 @@
                 "rpcs": {
                     "GetDTCs": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "ReadDID": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -543,13 +544,13 @@
                 "rpcs": {
                     "SetCloudAppProperties":{
                         "hmi_levels":["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GetCloudAppProperties":{
                         "hmi_levels":["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -557,34 +558,34 @@
                 "rpcs": {
                     "GetVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": [
-                        "cloudAppVehicleID"
+                            "cloudAppVehicleID"
                         ]
                     },
                     "OnVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": [
-                        "cloudAppVehicleID"
+                            "cloudAppVehicleID"
                         ]
                     },
                     "SubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": [
-                        "cloudAppVehicleID"
+                            "cloudAppVehicleID"
                         ]
                     },
                     "UnsubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": [
-                        "cloudAppVehicleID"
+                            "cloudAppVehicleID"
                         ]
                     }
                 }
@@ -665,35 +666,35 @@
                 "rpcs": {
                     "ButtonPress": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GetInteriorVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "SetInteriorVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "OnInteriorVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "SystemRequest": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnRCStatus": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     }
                 }
             },
@@ -701,39 +702,39 @@
                 "rpcs": {
                     "GetVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["airbagStatus",
-                        "clusterModeStatus",
-                        "eCallInfo",
-                        "emergencyEvent"]
+                            "clusterModeStatus",
+                            "eCallInfo",
+                            "emergencyEvent"]
                     },
                     "OnVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["airbagStatus",
-                        "clusterModeStatus",
-                        "eCallInfo",
-                        "emergencyEvent"]
+                            "clusterModeStatus",
+                            "eCallInfo",
+                            "emergencyEvent"]
                     },
                     "SubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["airbagStatus",
-                        "clusterModeStatus",
-                        "eCallInfo",
-                        "emergencyEvent"]
+                            "clusterModeStatus",
+                            "eCallInfo",
+                            "emergencyEvent"]
                     },
                     "UnsubscribeVehicleData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"],
+                            "FULL",
+                            "LIMITED"],
                         "parameters": ["airbagStatus",
-                        "clusterModeStatus",
-                        "eCallInfo",
-                        "emergencyEvent"]
+                            "clusterModeStatus",
+                            "eCallInfo",
+                            "emergencyEvent"]
                     }
                 }
             },
@@ -741,18 +742,18 @@
                 "rpcs": {
                     "AlertManeuver": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "ShowConstantTBT": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "UpdateTurnList": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -760,217 +761,217 @@
                 "rpcs": {
                     "AddCommand": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "AddSubMenu": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "Alert": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "ChangeRegistration": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "CreateInteractionChoiceSet": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "DeleteCommand": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "DeleteFile": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "DeleteInteractionChoiceSet": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "DeleteSubMenu": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "EncodedSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "EndAudioPassThru": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "GenericResponse": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "ListFiles": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnAppInterfaceUnregistered": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnAudioPassThru": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "OnButtonEvent": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "OnButtonPress": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "OnCommand": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "OnDriverDistraction": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnEncodedSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnHMIStatus": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnLanguageChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnPermissionsChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnTBTClientState": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "PerformAudioPassThru": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "PerformInteraction": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "PutFile": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "RegisterAppInterface": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "ResetGlobalProperties": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "ScrollableMessage": {
                         "hmi_levels": ["FULL"]
                     },
                     "SetAppIcon": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetDisplayLayout": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetGlobalProperties": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "SetMediaClockTimer": {
                         "hmi_levels": ["FULL"]
                     },
                     "Show": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "Slider": {
                         "hmi_levels": ["FULL"]
                     },
                     "Speak": {
                         "hmi_levels": ["FULL",
-                        "LIMITED"]
+                            "LIMITED"]
                     },
                     "SubscribeButton": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "SyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "UnregisterAppInterface": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "UnsubscribeButton": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -992,8 +993,8 @@
                 "rpcs": {
                     "DiagnosticMessage": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -1005,117 +1006,117 @@
                 "rpcs": {
                     "ChangeRegistration": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "DeleteFile": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "EncodedSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "ListFiles": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnAppInterfaceUnregistered": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnEncodedSyncPData": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnHashChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnHMIStatus": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnLanguageChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnPermissionsChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "OnSystemRequest": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "PutFile": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "RegisterAppInterface": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "ResetGlobalProperties": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetGlobalProperties": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetAppIcon": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SetDisplayLayout": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "SystemRequest": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     },
                     "UnregisterAppInterface": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED",
-                        "NONE"]
+                            "FULL",
+                            "LIMITED",
+                            "NONE"]
                     }
                 }
             },
@@ -1123,8 +1124,8 @@
                 "rpcs": {
                     "SendLocation": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -1132,23 +1133,23 @@
                 "rpcs": {
                     "GetWayPoints": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "SubscribeWayPoints": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "UnsubscribeWayPoints": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     },
                     "OnWayPointChange": {
                         "hmi_levels": ["BACKGROUND",
-                        "FULL",
-                        "LIMITED"]
+                            "FULL",
+                            "LIMITED"]
                     }
                 }
             },
@@ -1912,6 +1913,13 @@
                         }
                     }
                 },
+                "LockScreenDismissalWarning":{
+                    "languages":{
+                        "en-us":{
+                            "textBody": "Swipe down to dismiss, acknowledging that you are not the driver"
+                        }
+                    }
+                },
                 "Notifications": {
                     "languages": {
                         "de-de": {
@@ -2518,9 +2526,9 @@
                     },
                     "NAVIGATION": {
                         "handled_rpcs": [
-                            { "function_id": 39 },  
-                            { "function_id": 45 },  
-                            { "function_id": 46 },  
+                            { "function_id": 39 },
+                            { "function_id": 45 },
+                            { "function_id": 46 },
                             { "function_id": 32784 }
                         ]
                     },

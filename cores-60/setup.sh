@@ -48,4 +48,10 @@
 #perl -pi -e "s/localhost:8087/$DOCKER_IP:8087/g" /usr/web/broker/index.js
 #
 ##Start supervisord
-/usr/bin/supervisord
+#/usr/bin/supervisord
+
+
+
+/usr/build/bin/smartDeviceLinkCore
+
+

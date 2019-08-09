@@ -1,4 +1,7 @@
 #docker build -t cores-6.0.0 .
+#docker run -d -p 8087:8087 --name cores-6.0.0 cores-6.0.0
+
+#
 
 # Copyright (c) 2018 Livio, Inc.
 # All rights reserved.
@@ -111,33 +114,37 @@ FROM crokita/manticore-sdl-core:default-6.0.0
 #    npm install"
 #
 ### Directory to run commands in
-#WORKDIR /usr/build/bin
+WORKDIR /usr/build/bin
 #
 ## Copy SDL Core start script into container
-#COPY setup.sh setup.sh
+COPY setup.sh setup.sh
 #
-#ENV LD_LIBRARY_PATH /usr/build/bin/
+ENV LD_LIBRARY_PATH /usr/build/bin/
 #
 ## Configure logger
-#RUN ldconfig
+RUN ldconfig
 #
 ## Delete default nginx configuration
 #RUN rm -v /etc/nginx/nginx.conf
 #
 ## Copy new nginx configuration
-#COPY nginx.conf /etc/nginx
+COPY nginx.conf /etc/nginx
 #
 ## Copy supervisor config
-#COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 #
 ## Replace log file with a custom made one
-#COPY log4cxx.properties /usr/build/bin/log4cxx.properties
+COPY log4cxx.properties /usr/build/bin/log4cxx.properties
 #
 ## Replace hmi capabilities file with a custom made one
-#COPY hmi_capabilities.json /usr/build/bin/hmi_capabilities.json
+COPY hmi_capabilities.json /usr/build/bin/hmi_capabilities.json
 #
 ## Replace sdl_preloaded_pt file with a custom made one
-#COPY sdl_preloaded_pt.json /usr/build/bin/sdl_preloaded_pt.json
+COPY sdl_preloaded_pt.json /usr/build/bin/sdl_preloaded_pt.json
+
+
+COPY core_config/smartDeviceLink.ini /usr/build/bin/smartDeviceLink.ini
+
 #
 ## Expose the following ports
 ##   3001: Expose SDL Core's file system
@@ -148,7 +155,15 @@ FROM crokita/manticore-sdl-core:default-6.0.0
 ##   8888: Expose websocket port for core log streaming
 ##   9000: Websocket connection to the broker
 ##   9898: Expose miniature policy server port
-EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898
+##   8087: Expose core websocket. SHOULD use broker in most cases.
+EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898 8087
+
+#-P will expose ports from container to host but it will be random
+
+#docker run -d -P -p 9010:8087 -p 9011:12345 --name cores-6.0.0 cores-6.0.0
+
+#docker run -d -P --name cores-6.0.0 cores-6.0.0
+
 #
 ## Run the start script that will launch SDL Core!
 CMD ["/bin/bash", "setup.sh"]
