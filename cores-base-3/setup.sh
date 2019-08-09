@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # Copyright (c) 2018 Livio, Inc.
 # All rights reserved.
 #
@@ -28,33 +30,22 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 #
+# Replaces the IP address in smartDeviceLink.ini with the machine's IP address and then runs SmartDeviceLink Core.
+# The IP is required to be replaced for the websocket connection with the HMI to function.
 
-# ##################################################################################################
-# Basic docker build of SDL Core for use with Manticore:  https://github.com/smartdevicelink/sdl_core
-# ##################################################################################################
-
-# This image is based of debian
-FROM manticore-sdl-core-base:latest
-
-RUN ls -al
-
-RUN ls -al
-
-
-RUN ls -al /usr
-
-RUN ls -al /usr/sdl_core
-
-WORKDIR /usr/sdl_core
-
-
-RUN git pull
-
-WORKDIR /
-
-RUN tar -xvzf develop-2019-08-08.tar.gz
-
-RUN ls -al
-
-
-RUN mv /usr/sdl_core /core/sdl_core/
+# Get the machine's IP address
+#DOCKER_IP="$(ip addr show ${CORE_NETWORK_INTERFACE} | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)"
+#echo "Changing smartDeviceLink.ini HMI ServerAddress to ${DOCKER_IP}"
+#echo "Running core version ${CORE_VERSION}"
+#
+## Replace the IP address in smartDeviceLink.ini with the machines IP address
+#perl -pi -e 's/127.0.0.1/'$DOCKER_IP'/g' /usr/build/bin/smartDeviceLink.ini
+#
+## Add the ability to send logs to stdout. Do not write logs to file
+#perl -pi -e 's/ALL, SmartDeviceLinkCoreLogFile/ALL, SmartDeviceLinkCoreLogFile/g' /usr/build/bin/log4cxx.properties
+#
+## Replace IP and Port in broker index.js file with the DOCKER_IP
+#perl -pi -e "s/localhost:8087/$DOCKER_IP:8087/g" /usr/web/broker/index.js
+#
+##Start supervisord
+/usr/bin/supervisord

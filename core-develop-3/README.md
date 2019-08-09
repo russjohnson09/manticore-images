@@ -6,13 +6,18 @@ Other builds can use this as a base.
 
 
 ##Image that has all requirements prepped
-docker build -t manticore-sdl-core-base-2 .
+docker build -t manticore-sdl-core-develop-2 .
 
 
 
 
 
-docker build -t manticore-sdl-core:develop --build-arg CORE_VERSION=develop .
+
+
+#Building
+docker build -t manticore-sdl-core:master --build-arg CORE_VERSION=master .
+
+
 
 
 docker run -d --name manticore-sdl-core-develop manticore-sdl-core:develop

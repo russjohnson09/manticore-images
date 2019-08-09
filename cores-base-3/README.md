@@ -6,7 +6,7 @@ Other builds can use this as a base.
 
 
 ##Image that has all requirements prepped
-docker build -t manticore-sdl-core-base-2 .
+docker build -t manticore-sdl-core-base-3 .
 
 
 

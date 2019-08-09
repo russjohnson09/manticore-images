@@ -33,28 +33,38 @@
 # Basic docker build of SDL Core for use with Manticore:  https://github.com/smartdevicelink/sdl_core
 # ##################################################################################################
 
+#docker build -t manticore-sdl-core-base-3 .
 # This image is based of debian
-FROM manticore-sdl-core-base:latest
+FROM manticore-sdl-core-base-2
+
+
+WORKDIR /
+
 
 RUN ls -al
 
+WORKDIR /usr
+WORKDIR /core
+
 RUN ls -al
 
 
-RUN ls -al /usr
+WORKDIR /core/build
 
-RUN ls -al /usr/sdl_core
+RUN ls -al
 
-WORKDIR /usr/sdl_core
+
+WORKDIR /core/sdl_core
+
+RUN ls -al
 
 
 RUN git pull
 
-WORKDIR /
-
-RUN tar -xvzf develop-2019-08-08.tar.gz
-
-RUN ls -al
 
 
-RUN mv /usr/sdl_core /core/sdl_core/
+WORKDIR /core/build
+
+
+
+RUN make install
