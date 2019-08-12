@@ -1,56 +1,22 @@
-# Copyright (c) 2018 Livio, Inc.
-# All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# Redistributions of source code must retain the above copyright notice, this
-# list of conditions and the following disclaimer.
-#
-# Redistributions in binary form must reproduce the above copyright notice,
-# this list of conditions and the following
-# disclaimer in the documentation and/or other materials provided with the
-# distribution.
-#
-# Neither the name of the Livio Inc. nor the names of its contributors
-# may be used to endorse or promote products derived from this software
-# without specific prior written permission.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
-# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-# POSSIBILITY OF SUCH DAMAGE.
-#
+#docker build -t cores-develop .
 
-# ##################################################################################################
-# Basic docker build of SDL Core for use with Manticore:  https://github.com/smartdevicelink/sdl_core
-# ##################################################################################################
-
-# This image is based of debian
 FROM buildpack-deps:stretch
 
 MAINTAINER Chris Rokita version:1.0
 
-ARG CORE_VERSION=master 
-ARG DBUILD_AVAHI_SUPPORT=OFF 
-ARG DBUILD_USB_SUPPORT=OFF 
-ARG DBUILD_BT_SUPPORT=OFF 
-ARG DEXTENDED_MEDIA_MODE=OFF 
-ARG DENABLE_HMI_PTU_DECRYPTION=OFF 
+ARG CORE_VERSION=develop
+ARG DBUILD_AVAHI_SUPPORT=OFF
+ARG DBUILD_USB_SUPPORT=OFF
+ARG DBUILD_BT_SUPPORT=OFF
+ARG DEXTENDED_MEDIA_MODE=OFF
+ARG DENABLE_HMI_PTU_DECRYPTION=OFF
 
-ENV CORE_NETWORK_INTERFACE eth0 
+ENV CORE_NETWORK_INTERFACE eth0
 ENV CORE_VERSION=${CORE_VERSION}
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        build-essential \ 
+        build-essential \
         cmake \
         libudev-dev \
         libsqlite3-dev \
@@ -60,13 +26,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         sudo \
         supervisor \
         sqlite3 \
-        git 
+        git
 
 # Download SDL Core from github
 WORKDIR /usr
 
-RUN mkdir /usr/sdl_core
-RUN git clone https://github.com/smartdevicelink/sdl_core.git /usr/sdl_core -b $CORE_VERSION --depth=1
+RUN cd /usr && git clone https://github.com/smartdevicelink/sdl_core.git  && cd sdl_core && git checkout develop
 
 RUN mkdir /usr/build
 
@@ -85,13 +50,12 @@ RUN cmake -DBUILD_AVAHI_SUPPORT=$DBUILD_AVAHI_SUPPORT \
     -DEXTENDED_MEDIA_MODE=$DEXTENDED_MEDIA_MODE \
     -DENABLE_HMI_PTU_DECRYPTION=$DENABLE_HMI_PTU_DECRYPTION \
     ../sdl_core \
-    && make \
-    && make install \
-    && mv bin /usr/tmpbin \
-    && rm -rf * \
-    && mv /usr/tmpbin bin 
-    
-RUN mkdir -p /usr/web/logstream 
+    && make
+
+##TODO try not to make any changes above this line to speed things up.
+
+
+RUN mkdir -p /usr/web/logstream
 RUN mkdir -p /usr/web/broker
 RUN mkdir -p /usr/web/policy
 WORKDIR /usr/web/logstream
@@ -166,4 +130,19 @@ COPY sdl_preloaded_pt.json /usr/web/policy/pt.json
 EXPOSE 3001 12345 5050 5080 8090 8888 9000 9898
 
 # Run the start script that will launch SDL Core!
+
+#update core build as final step before launch
+#https://stackoverflow.com/questions/36996046/how-to-prevent-dockerfile-caching-git-clone
+#recompile using latests
+#RUN echo "last updated 2018-08-08" && cd /usr/sdl_core && ls -al
+RUN echo "last updated 2018-08-09" && cd /usr/sdl_core && git pull && cd /usr/build && make && make install
+
+
+RUN echo "last updated 2018-08-09" && cd /usr/sdl_core && git pull && cd /usr/build && make && make install \
+&& mv bin /usr/tmpbin \
+&& rm -rf * \
+&& mv /usr/tmpbin bin  && rm -R /usr/sdl_core
+
 CMD ["/bin/bash", "setup.sh"]
+
+##docker run -d -p 12346:12345 -p 3002:3001 -p 9001:9000 --name core cores-develop:latest
